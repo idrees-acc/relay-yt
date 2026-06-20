@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashara 1448 Relay</title>
+  <link rel="icon" type="image/png" href="/hussain.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+  <style>
+    :root {
+      --green-900: #14532d;
+      --green-800: #166534;
+      --green-700: #15803d;
+      --gold: #d4a843;
+      --gold-light: #e8c972;
+      --bg: #f7f7f5;
+      --surface: #ffffff;
+      --border: #e0e0dc;
+      --text: #1a1a1a;
+      --text-muted: #6b6b6b;
+      --error: #dc2626;
+      --radius: 10px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--green-900);
+      background-image: url('/bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      min-height: 100dvh;
+      padding: 1rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .login {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+      background: rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 1.5rem 2rem;
+      border-radius: var(--radius);
+    }
+
+    .brand img {
+      width: 80px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    .brand h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #ffffff;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .brand p {
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 0.25rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .error {
+      color: var(--error);
+      font-size: 0.8125rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      min-height: 1.125rem;
+      font-weight: 500;
+    }
+
+    .field {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.625rem 0.75rem;
+      font-size: 0.875rem;
+      font-family: inherit;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    input:focus {
+      border-color: var(--green-700);
+      box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.15);
+    }
+
+    input::placeholder {
+      color: #a0a0a0;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      font-size: 0.875rem;
+      font-family: inherit;
+      font-weight: 600;
+      background: var(--green-800);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s;
+      margin-top: 0.25rem;
+    }
+
+    button:hover {
+      background: var(--green-700);
+    }
+
+    button:active {
+      background: var(--green-900);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 1.5rem 0 1rem;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #ffffff;
+      margin-top: 1.5rem;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 0.625rem 1.25rem;
+      border-radius: var(--radius);
+    }
+
+    .footer a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-size: 0.6875rem;
+    }
+
+    .footer a:hover {
+      color: #ffffff;
+    }
+
+    @media screen and (max-width: 480px) {
+      body {
+        padding: 0;
+      }
+
+      .login {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        min-height: 100dvh;
+        justify-content: center;
+        padding: 1.5rem;
+      }
+
+      .card {
+        border-radius: 12px;
+        padding: 1.5rem;
+      }
+
+      .brand img {
+        width: 64px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login">
+    <div class="brand">
+      <img src="/hussain.png" alt="">
+      <h1>Ashara 1448 Relay</h1>
+    </div>
+    <div class="card">
+      <div class="error">{{ERROR_MESSAGE}}</div>
+      <form id="loginForm" method="POST" action="/login">
+        <input type="hidden" name="fingerprint" id="fingerprint">
+        <div class="field">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Enter username" autocomplete="username" required>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter password" autocomplete="current-password" required>
+        </div>
+        <button type="submit">Sign in</button>
+      </form>
+    </div>
+    <div class="footer">
+      Ashara Mubaraka 1448H
+      <br>
+      <a href="https://aewaz.com/" target="_blank">Built With Care By Aewaz Technologies</a>
+    </div>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@4/dist/fp.min.js"></script>
+  <script>
+    var fpReady = FingerprintJS.load().then(function (fp) { return fp.get(); });
+    fpReady.then(function (result) {
+      document.getElementById('fingerprint').value = result.visitorId;
+    });
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      if (document.getElementById('fingerprint').value) return;
+      e.preventDefault();
+      var form = this;
+      fpReady.then(function (result) {
+        document.getElementById('fingerprint').value = result.visitorId;
+        form.submit();
+      }).catch(function () { form.submit(); });
+    });
+  </script>
+</body>
+</html>
